@@ -14,12 +14,13 @@
 
 ![포탈에서 Azure Function App 만들기](images/function-portal.png)
 
-함수 앱 만들기에서 구독을 정확히 선택하고 작업중인 리소스 그룹을 선택합니다. 아래 값들을 설정하고 "검토 + 만들기"를 클릭합니다. 
+함수 앱 만들기에서 구독을 정확히 선택하고 작업중인 리소스 그룹을 선택합니다. 아래 값들을 설정하고 "검토 + 만들기"를 클릭합니다.
+설치된 .Net 버전에 맞게 설정 합니다.
 
 * 함수앱 이름: 예) adtholfunction003
 * 게시: 코드 
 * 런타임 스택: .NET
-* 버전: 6
+* 버전: 6  (.Net Core 3.1 설치의 경우는 3.1 버전 선택)
 * 지역: East US
 
 ![Function App 생성](images/functions_01.png)
@@ -94,7 +95,7 @@ Azure Digital Twin의 URL을 Function의 환경변수에 설정해줍니다. Azu
 1. VSCode 프롬프트에 아래 정보를 선택하거나 입력합니다.
 
     - **Select a language for your function project**: `C#` 선택.
-    - **Select a .NET runtime**: .NET 6
+    - **Select a .NET runtime**: .NET 6 (.NET Core 3.1 설치의 경우 3.1 선택)
     - **Select a template for your project's first function**: Azure Event Grid Trigger
     - **Provide a function name**: `TwinsFunction` 입력.
     - **Provide a namespace**: `My.Function` 입력.
@@ -117,11 +118,13 @@ Visual Studio Code 터미널(Terminal > New Termianl)에서 아래 명령을 이
 이제 ADT SDK를 이용해서 코드를 작성하여 디지털 트윈을 업데이트 합니다. 
 
 1. VS Code에서 TwinsFunction.cs을 열고
-1. 아래 코드를 탬플릿에 맞춰서 넣어줍니다. 
+2. 설치된 .Net 버전에 맞게 아래 코드를 탬플릿에 맞춰서 넣어줍니다. 
 
 >[!TIP]
 >namespace와 function 이름이 같아야 합니다. 이전 단계에서 다른 이름을 사용했다면 같은 이름을 사용해야 합니다. 
 
+
+.Net 6.0 설치시 C#코드
 ```csharp
 using Azure;
 using Azure.Core.Pipeline;
@@ -156,6 +159,88 @@ namespace My.Function
                 //Authenticate with Digital Twins
                 var cred = new DefaultAzureCredential();
                 DigitalTwinsClient client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred);
+                log.LogInformation($"ADT service client connection created.");
+                
+                if (eventGridEvent != null && eventGridEvent.Data != null)
+                {
+                    log.LogInformation(eventGridEvent.Data.ToString());
+
+                    // Reading deviceId and temperature for IoT Hub JSON
+                    JObject deviceMessage = (JObject)JsonConvert.DeserializeObject(eventGridEvent.Data.ToString());
+                    string deviceId = (string)deviceMessage["systemProperties"]["iothub-connection-device-id"];
+                    string deviceType = (string)deviceMessage["body"]["DeviceType"];
+                    log.LogInformation($"Device:{deviceId} DeviceType is:{deviceType}");
+                     var updateTwinData = new JsonPatchDocument();
+                    switch (deviceType){
+                        case "FanningSensor":
+                            updateTwinData.AppendAdd("/ChasisTemperature", deviceMessage["body"]["ChasisTemperature"].Value<double>());
+                            updateTwinData.AppendAdd("/FanSpeed", deviceMessage["body"]["Force"].Value<double>());
+                            updateTwinData.AppendAdd("/RoastingTime", deviceMessage["body"]["RoastingTime"].Value<int>());
+                            updateTwinData.AppendAdd("/PowerUsage", deviceMessage["body"]["PowerUsage"].Value<double>());
+                            await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
+                        break;
+                        case "GrindingSensor":
+                            updateTwinData.AppendAdd("/ChasisTemperature", deviceMessage["body"]["ChasisTemperature"].Value<double>());
+                            updateTwinData.AppendAdd("/Force", deviceMessage["body"]["Force"].Value<double>());
+                            updateTwinData.AppendAdd("/PowerUsage", deviceMessage["body"]["PowerUsage"].Value<double>());
+                            updateTwinData.AppendAdd("/Vibration", deviceMessage["body"]["Vibration"].Value<double>());
+                            await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
+                        break;
+                        case "MouldingSensor":
+                            updateTwinData.AppendAdd("/ChasisTemperature", deviceMessage["body"]["ChasisTemperature"].Value<double>());
+                            updateTwinData.AppendAdd("/PowerUsage", deviceMessage["body"]["PowerUsage"].Value<double>());
+                            await client.UpdateDigitalTwinAsync(deviceId, updateTwinData);
+                        break;
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                log.LogError(e.Message);
+            }
+
+        }
+    }
+
+}
+```
+
+.Net Core 3.1 설치시 C#코드
+```csharp
+using Azure;
+using Azure.Core.Pipeline;
+using Azure.DigitalTwins.Core;
+using Azure.Identity;
+using Microsoft.Azure.EventGrid.Models;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.EventGrid;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace My.Function
+{
+
+    public class TwinsFunction
+    {
+        //Your Digital Twin URL is stored in an application setting in Azure Functions
+        private static readonly string adtInstanceUrl = Environment.GetEnvironmentVariable("ADT_SERVICE_URL");
+        private static readonly HttpClient httpClient = new HttpClient();
+
+        [FunctionName("TwinsFunction")]
+        public async Task Run([EventGridTrigger] EventGridEvent eventGridEvent, ILogger log)
+        {
+            log.LogInformation(eventGridEvent.Data.ToString());
+            if (adtInstanceUrl == null) log.LogError("Application setting \"ADT_SERVICE_URL\" not set");
+            try
+            {
+                //Authenticate with Digital Twins
+                ManagedIdentityCredential cred = new ManagedIdentityCredential("https://digitaltwins.azure.net");
+                DigitalTwinsClient client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, new DigitalTwinsClientOptions { Transport = new HttpClientTransport(httpClient) });
                 log.LogInformation($"ADT service client connection created.");
                 
                 if (eventGridEvent != null && eventGridEvent.Data != null)
