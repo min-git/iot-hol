@@ -13,7 +13,7 @@
 
 ## Azure Digital Twin 개요 
 
-[디지털 트윈을 활용한 IoT 솔루션 구축.pdf](./adt-intro.pdf)
+
 
 ## 아키텍쳐 
 
