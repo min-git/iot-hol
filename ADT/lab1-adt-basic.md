@@ -11,7 +11,9 @@
 
 왼쪽의 전체 메뉴를 펼쳐서 "+ 리소스 만들기" 를 선택하고 "Resource Group"으로 검색해서 리소스 그룹을 원하는 이름으로 **한국 중부(Korea Central)** 지역에 만듭니다. (예 adthol-rg)
 
-![리소스그룹 만들기](images/adt-rg.png)
+![리소스그룹 만들기](ADT/images/adt-lap1-01.png)
+
+![리소스그룹 만들기](ADT/images/adt-lap1-02.png)
 
 ![리소스그룹 만들기](ADT/images/adtholkm-001.png)
 
