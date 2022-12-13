@@ -312,7 +312,7 @@ IoT 디바이스가 보내는 데이터는 IoT Hub를 통해서 디지털 트윈
 
 Azure Portal에서 다시 "+리소스 만들기"를 선택한 후 "사물 인터넷"탭에서 IoT Hub를 찾아서 선택합니다. "검토 + 만들기" 버튼을 눌러 IoT Hub를 생성합니다. 
 
-![IoT Hub 새로만들기](images/iothub-new.png)
+![IoT Hub 새로만들기](images/adt-lap4-14.png)
 
 * 구독: 실습에 사용하는 구독 선택
 * 리소스 그룹: 실습에 사용하는 리소스 그룹 선택
