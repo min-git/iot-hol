@@ -67,7 +67,7 @@ Azure Digital Twin의 URL을 Function의 환경변수에 설정해줍니다. Azu
 
 그리고 반드시 저장을 클릭해서 저장합니다. 
 
-![Function App Setting](images/adt-lap4-07.png)
+![Function App Setting](images/adt-lap4-07-1.png)
 
 ## Visual Studio Code로 Azure Function App 만들기 
 
