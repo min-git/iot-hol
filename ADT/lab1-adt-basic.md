@@ -9,11 +9,11 @@
 
 ### 리소스 그룹 만들기 
 
-왼쪽의 전체 메뉴를 펼쳐서 "+ 리소스 만들기" 를 선택하고 "Resource Group"으로 검색해서 리소스 그룹을 원하는 이름으로 **미국 동부(East US)** 지역에 만듭니다. (예 adtholrg)
+왼쪽의 전체 메뉴를 펼쳐서 "+ 리소스 만들기" 를 선택하고 "Resource Group"으로 검색해서 리소스 그룹을 원하는 이름으로 **한국 중부(Korea Central)** 지역에 만듭니다. (예 adthol-rg)
 
 ![리소스그룹 만들기](images/adt-rg.png)
 
-![리소스그룹 만들기](images/adt-rg2.png)
+![리소스그룹 만들기](ADT/images/adtholkm-001.png)
 
 ### Azure Digital Twins 만들기
 
@@ -21,15 +21,15 @@
 
 ![ADT 만들기](images/adt-portal.png)
 
-**미국 동부 (East US)** 같이 ADT가 있는 지역에 adthol003 등의 이름으로 Azure Digitla Twin 리소스를 만듭니다. (현재는 한국 데이터센터는 미지원)
+**한국 중부 (Korea Central)** 같이 ADT가 있는 지역에 adthol 등의 이름으로 Azure Digitla Twin 리소스를 만듭니다.
 
 "Azure Digital Twins 데이터 소유자 역할 담당"을 체크하면 리소스 생성시 자동으로 "Azure Digital Twins 데이터 소유자" 권한이 부여 됩니다.
 
-![ADT 만들기](images/adt_0.png)
+![ADT 만들기](ADT/images/adtholkm-002.png)
 
 Networking은 **Public endpoint (공용 액세스)**로 선택하고 **고급** 탭에서 **시스템 관리 ID 켜기**를 선택합니다. 
 
-![시스템 관리 ID 켜기](images/adt-system-managed-identity.png)
+![시스템 관리 ID 켜기](ADT/images/adtholkm-003.png)
 
 검토 + 만들기 탭에서 **만들기**를 선택합니다.  
 
