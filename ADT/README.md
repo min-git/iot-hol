@@ -22,7 +22,7 @@
 ## 사전준비 내용 
 1. Azure 구독: 구독이 없으면 [체험계정 만들기](https://azure.microsoft.com/ko-kr/free/)
 1. 실습용 노트북 준비: Windows 10 PC (또는 Linux / Mac 가능) + 개발환경 설치 
-    * [.NET 6.0 혹은 .NET Core 3.1 설치](https://dotnet.microsoft.com/en-us/download/dotnet)
+    * [.NET Core 3.1 혹은 .NET 6.0+ 설치](https://dotnet.microsoft.com/en-us/download/dotnet)
     * [Visual Studio Code](https://code.visualstudio.com/) 설치
     * [VS Code C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
     * [VS Code Azure Function Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
@@ -53,6 +53,7 @@
 ### 국내사례 
 
 [현대자동차 EV Battery Asset Management 디지털 트윈](https://news.microsoft.com/ko-kr/2022/05/24/hmg-evbattery-eng/)
+
 [두산 풍력발전 디지털 트윈](https://www.youtube.com/watch?v=DcFWLawafGc&t=2s)
 
 ### Product Page
