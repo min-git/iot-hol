@@ -23,7 +23,7 @@
 * 버전: 6  (.Net Core 3.1 설치의 경우는 3.1 버전 선택)
 * 지역: East US
 
-![Function App 생성](images/functions_01.png)
+![Function App 생성](images/adt-lap4-01.png)
 
 만들기를 클릭하여 Function 앱을 만듭니다. 
 
@@ -39,7 +39,7 @@ Azure Portal에서 system-managed identity를 만들고 Function App의 identity
 
 이전 스텝에서 생성한 Azure Function으로 접속합니다. "ID" 메뉴를 선택하여 아래와 같이 "시스템 할당항목"(System-managed identity)에서 상태를 "켜기"로 변경하고 저장을 클릭합니다. 
 
-![System managed identity on](images/function-system-identity.png)
+![System managed identity on](images/adt-lap4-02.png)
 
 ### ADT에서 Azure Function에 권한 추가
 
@@ -50,11 +50,11 @@ Azure Portal에서 system-managed identity를 만들고 Function App의 identity
 * 구독: 사용중인 구독 선택
 * 선택: 생성한 함수앱 선택 
 
-![역할 할당](images/adt-assign-function.png)
+![역할 할당](images/adt-lap4-03.png)
 
-![역할 할당 2](images/adt-assign-function2.png)
+![역할 할당 2](images/adt-lap4-04.png)
 
-![역할 할당 2](images/adt-assign-function3.png)
+![역할 할당 2](images/adt-lap4-05.png)
 
 ### Azure Function 환경변수 설정
 
@@ -63,11 +63,11 @@ Azure Digital Twin의 URL을 Function의 환경변수에 설정해줍니다. Azu
 * 이름: ADT_SERVICE_URL
 * 값: https:// digital twin url
 
-![Function App Setting](images/function-app-setting.png)
+![Function App Setting](images/adt-lap4-06.png)
 
 그리고 반드시 저장을 클릭해서 저장합니다. 
 
-![Function App Setting](images/function-save-config.png)
+![Function App Setting](images/adt-lap4-07.png)
 
 ## Visual Studio Code로 Azure Function App 만들기 
 
@@ -316,12 +316,12 @@ Azure Portal에서 다시 "+리소스 만들기"를 선택한 후 "사물 인터
 
 * 구독: 실습에 사용하는 구독 선택
 * 리소스 그룹: 실습에 사용하는 리소스 그룹 선택
-* 지역: 미국동부
-* IoT Hub이름: 예) adtholhothub003
+* 지역: 한국중
+* IoT Hub이름: 예) iothub-hol
 
-![IoT Hub 새로만들기](images/iothub-create.png)
+![IoT Hub 새로만들기](images/adt-lap4-08.png)
 
-![IoT Hub 새로만들기](images/iothub-create2.png)
+![IoT Hub 새로만들기](images/adt-lap4-09.png)
 
 ## IoT Hub에 디바이스를 하나 만들어줍니다. 
 
@@ -332,11 +332,11 @@ Azure Portal에서 다시 "+리소스 만들기"를 선택한 후 "사물 인터
 * 키 자동생성: 체크 
 * IoT Hub에 이 디바이스 연결: 사용 
 
-![IoT Hub 디바이스 만들기](images/iothub-device.png)
+![IoT Hub 디바이스 만들기](images/adt-lap4-10.png)
 
 생성된 후 생성된 디바이스 아이디를 클릭하여 Device Connection String을 저장해 둡니다. 
 
-![IoT Hub 디바이스 connection string](images/iothub-connstr.png)
+![IoT Hub 디바이스 connection string](images/adt-lap4-11.png)
 
 Device Connection String은 이런 형식 입니다. 
 
@@ -350,18 +350,18 @@ HostName=<iothub 이름>.azure-devices.net;DeviceId=GrindingStep;SharedAccessKey
 
 Azure 포탈에서 IoT Hub로 들어갑니다. "이벤트" 메뉴를 선택하고 "+이벤트 구독"을 클릭합니다. 아래와 같이 정보를 입력하고 만들기를 클릭합니다. 
 
-![IoT Hub 이벤트 구독](images/iothub-event-new.png)
+![IoT Hub 이벤트 구독](images/adt-lap4-12.png)
 
-* 이벤트 구독정보 이름: IoTHubEvents
+* 이벤트 구독정보 이름: IoTHubEvent
 * 이벤트 스키마: Event Grid 스키마
-* 시스템 토픽 이름: adtholiothub003
+* 시스템 토픽 이름: iothub-hol-topic
 * 이벤트 형식 필터링: Device Telemetry 만 선택
 * 엔트포인트 유형: Azure 함수 
 * 엔트포인트: 엔드포인트 선택 누름. 이전 스템에서 만든 Azure Function을 선택해 줍니다.  (구독, 리소스그룹, 합수앱, 슬롯, 기능(TwinsFunction) 선택)
 
 "만들기"를 선택합니다. 
 
-![IoT Hub 이벤트 구독 만들기](images/iothub-event-create.png)
+![IoT Hub 이벤트 구독 만들기](images/adt-lap4-13.png)
 
 ## 시뮬레이션 디바이스에서 데이터 보내기
 
