@@ -38,8 +38,8 @@ Networking은 **Public endpoint (공용 액세스)**로 선택하고 **고급** 
 원하는 디렉토리에 소스를 클론 합니다. 
 
 ``` bash
-mkdir c:\users\username\repos
-cd c:\users\username\repos
+mkdir c:\adt-workspace
+cd c:\adt-workspace
 git clone https://github.com/Azure-Samples/digital-twins-samples/
 ```
 
