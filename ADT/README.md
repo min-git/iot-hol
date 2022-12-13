@@ -52,7 +52,8 @@
 
 ### 국내사례 
 
-[두산 풍력발전 디지털 트윈](https://customers.microsoft.com/en-us/story/848311-doosan-manufacturing-azure-digital-twins)
+[현대자동차 EV Battery Asset Management 디지털 트윈](https://news.microsoft.com/ko-kr/2022/05/24/hmg-evbattery-eng/)
+[두산 풍력발전 디지털 트윈](https://www.youtube.com/watch?v=DcFWLawafGc&t=2s)
 
 ### Product Page
 
