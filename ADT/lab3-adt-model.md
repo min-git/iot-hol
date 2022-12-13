@@ -10,11 +10,11 @@ Lab 2의 ADT Explorer에 접속합니다.
 
 왼쪽 "Model View" 탭에서 3번째 아이콘 Upload Model 아이콘을 선택하고 Lab 1에서 받아놓은 소스코드에서 "digital-twins-samples/HandsOnLab/models' 폴더의 7개 json 파일을 모두 선택하여 업로드 합니다. 
 
-![ADT Model Upload](images/adt-model-upload.png)
+![ADT Model Upload](images/adt-lap3-01.png)
 
 모델이 정상적으로 업로드 된것을 확인합니다. 
 
-![ADT Model Upload](images/adt-model-upload2.png)
+![ADT Model Upload](images/adt-lap3-02.png)
 
 ## 모델 살펴보기 
 
@@ -22,7 +22,9 @@ Lab 2의 ADT Explorer에 접속합니다.
 
 모델의 DTDL 내용은 json파일을 에디터로 열어서 볼 수 있습니다. ADT Explore에서도 각 모델에서 정보 아이콘을 눌려 확인 할 수 있습니다. 
 
-![ADT Model View](images/adt-model-view.png)
+![ADT Model View](images/adt-lap3-03.png)
+
+![ADT Model View](images/adt-lap3-04.png)
 
 우리가 만들려고 하는 초콜릿 공장은 "Digital Factory"를 가장 상위 모델로 시작해서 "Digital Factory"는 "Factory Floor"를 가지고 있고 다시 "Production Line"으로 구성되어 있습니다. 즉, 계층 구조를 가지고 있고 마지막 계층에는 "Production Step" 이 있는데 공정별로 "Fanning/Roasting", "Grinding/Crushing", "Moulding" 스텝이 있습니다. 
 
@@ -40,7 +42,7 @@ Lab 2의 ADT Explorer에 접속합니다.
 
 업로드 한 모델에서 플러스 아이콘을 클릭하면 "New Twin Name" 입력 창이 뜹니다. 여기에 트윈 이름을 입력하면 됩니다. 
 
-![New Twin Instance](images/adt-new-twin.png)
+![New Twin Instance](images/adt-lap3-05.png)
 
 아래 모델 ID(DTMI) - 트윈이름을 참조하여 모델별로 "+" 아이콘을 클릭하여 트윈 인스턴스 4개를 만듭니다. 
 
@@ -49,7 +51,7 @@ Lab 2의 ADT Explorer에 접속합니다.
 * dtmi:com:microsoft:iot:e2e:digital_factory:production_line;1 - **ProductionLine**
 * dtmi:com:microsoft:iot:e2e:digital_factory:production_step_grinding;1 - **GrindingStep**
 
-![ADT Instaince](images/adt-instance.png)
+![ADT Instaince](images/adt-lap3-06.png)
 
 ## 관계 만들기 
 
