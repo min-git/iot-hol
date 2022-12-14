@@ -29,27 +29,27 @@ Azure Data Explorer를 생성하여 Azure Digital Twins에서 전송하는 데�
 
 실습시 생성하였던 Azure Digital Twins 인스턴스의 "출력 연결" 섹션에서 Data History를 선택 합니다.
 
-![ADX DataHistory생성](./images/adx_06.png)
+![ADX DataHistory생성](./images/adt-lap6-02.png)
 
 보내기 페이지에서 Event Hub 정보를 입력 합니다.
 
-![ADX DataHistory보내기](./images/adt_007.png)
+![ADX DataHistory보내기](./images/adt-lap6-03.png)
 
 저장소 페이지에서 Azure Data Explorer 정보를 입력 합니다.
 
-![ADX DataHistory보내기](./images/adx_08.png)
+![ADX DataHistory보내기](./images/adt-lap6-04.png)
 
 사용권한 페이지에서 Event Hubs, Azure Data Explorer 리소스에 연결할 수 있는 Azure Digital Twins 인스턴스 권한을 부여합니다.
 
-![ADX DataHistory사용권한](./images/adx_09.png)
+![ADX DataHistory사용권한](./images/adt-lap6-05.png)
 
 검토 + 만들기 페이지에서 리소스의 세부 정보를 검토하고 연결 만들기를 선택합니다.
 
-![ADX DataHistory검토만들기](./images/adx_10.png)
+![ADX DataHistory검토만들기](./images/adt-lap6-06.png)
 
 연결 만들기가 완료되면 Azure Digital Twins 인스턴스의 Data History 페이지로 다시 이동하여 세부 정보를 확인 합니다.
 
-![ADX DataHistory정보확인](./images/adx_11.png)
+![ADX DataHistory정보확인](./images/adt-lap6-07.png)
 
 
 ## 샘플 트윈 그래프로 데이터 가시화 
