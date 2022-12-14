@@ -39,7 +39,7 @@ Azure Portal에서 system-managed identity를 만들고 Function App의 identity
 
 이전 스텝에서 생성한 Azure Function으로 접속합니다. "ID" 메뉴를 선택하여 아래와 같이 "시스템 할당항목"(System-managed identity)에서 상태를 "켜기"로 변경하고 저장을 클릭합니다. 
 
-![System managed identity on](images/adt-lap4-02.png)
+![System managed identity on](images/adt-lap4-02-1.png)
 
 ### ADT에서 Azure Function에 권한 추가
 
