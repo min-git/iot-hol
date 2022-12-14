@@ -22,7 +22,7 @@ Azure 포탈의 왼쪽 위 전체 메뉴에서 "리소스만들기"를 선택하
  * 위치: 한국중부
  * 가격책정계층: 표준
 
- ![New Event Hub](./images/eh-create.png)
+ ![New Event Hub](./images/adt-lap5-01.png)
 
 ### twins-event-hub 이벤트 허브 생성
 
