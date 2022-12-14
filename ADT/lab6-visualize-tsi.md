@@ -16,7 +16,7 @@ Azure Data Explorer를 선택하여 생성합니다.
 
 기본 클러스터 정보를 다음과 같이 입력하여 "검토 + 만들기"를 선택하여 서비스를 생성 합니다.
 
-![ADX 생성정보](./images/adx_03.png)
+![ADX 생성정보](./images/adt-lap6-01.png)
 
 생성된 Azure Data Explorer 서비스에서 "데이터베이스 추가"를 선택하여 데이터베이스를 생성 합니다.
 
