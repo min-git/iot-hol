@@ -148,7 +148,7 @@ evaluate azure_digital_twins_query_request(ADTendpoint, ADTquery)
 ![ADX 쿼리실행](./images/adx_17.png)
    
 
-***리소스 정리***
+### 리소스 정리
 
 요금이 발생하지 않도록 로컬 구성 및 Azure 리소스를 삭제 합니다.
 리소스 그룹에서 삭제 진행합니다.
