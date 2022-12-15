@@ -121,11 +121,11 @@ Azure Digital Twins 데이터 시뮬레이터의 샘플 디지털 트윈 데이�
 
 Azure Digital Twins 인스턴스 URL를 입력한 후 "Generate environment" 버튼을 클릭 합니다.
 
-![ADT Simulator접속](./images/adx_12.png)
+![ADT Simulator접속](./images/adt-lap6-10.png)
 
 시뮬레이션이 준비되면 "Start simulation"을 선택하여 시뮬레이션된 데이터를 Azure Digital Twins 인스턴스로 푸시합니다.
 
-![ADT Simulator접속](./images/adx_13.png)
+![ADT Simulator접속](./images/adt-lap6-11.png)
 
  아래 쿼리를 실행하여 Salt machine 두대의 데이터 흐름을 가시화 합니다.
  <ADT-instance> 와 <table_name>을 변경하여 실행합니다.
@@ -144,7 +144,8 @@ evaluate azure_digital_twins_query_request(ADTendpoint, ADTquery)
 | where Key == "OutFlow"
 | render timechart with (ycolumns = val_double)
  ```
-
+ 
+ ADX 쿼리 실행 예시
 ![ADX 쿼리실행](./images/adx_17.png)
    
 
