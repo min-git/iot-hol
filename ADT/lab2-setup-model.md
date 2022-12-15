@@ -22,9 +22,9 @@ Azure Digital Twin 서비스의 설정 등을 수정하기 위해서는 적절�
 
 저장이 완료되면 역할 할당에 추가된 것을 확인합니다. 
 
-![ADT 권한추가](images/adt-lap2-03.png)
+![ADT 권한추가](images/adt-lap2-03-1.png)
 
-![ADT 권한추가](images/adt-lap2-04.png)
+![ADT 권한추가](images/adt-lap2-04-1.png)
 
 ADT Explorer를 닫았다가 다시 열어봅니다. **다시 에러가 나면 로그아웃 했다가 다시 로그인** 합니다. 
 
