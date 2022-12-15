@@ -111,7 +111,7 @@ Visual Studio Code 터미널(Terminal > New Termianl)에서 아래 명령을 이
     dotnet add package Azure.DigitalTwins.Core
     dotnet add package Azure.identity
     dotnet add package System.Net.Http
-    dotnet add package Azure.Messaging.EventGrid
+    dotnet add package Microsoft.Azure.EventGrid
 ```
 
 ## Event Grid 트리거 Azure Function 코딩 
