@@ -15,7 +15,7 @@
 
 ![리소스그룹 만들기](images/adt-lap1-03.png)
 
-![리소스그룹 만들기](images/adtholkm-001.png)
+![리소스그룹 만들기](images/adtholkm-001-1.png)
 
 ### Azure Digital Twins 만들기
 
