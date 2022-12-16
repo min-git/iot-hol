@@ -28,7 +28,7 @@ Azure 포탈의 왼쪽 위 전체 메뉴에서 "리소스만들기"를 선택하
 
  Azure 포탈에서 이벤트 허브 네임스페이스로 들어와서 Event Hubs 메뉴를 선택한 후 "+이벤트 허브"를 클릭한다. twins-event-hub 이름으로 이벤트 허브를 만듭니다. 
 
-![New Event Hub](./images/eh-create2_update.png)
+![New Event Hub](./images/adt-lap5-02-1.png)
 
 ### twins-event-hub 공유 액세스 정책 만들기
 
@@ -39,7 +39,9 @@ Azure 포탈의 왼쪽 위 전체 메뉴에서 "리소스만들기"를 선택하
 * 정책이름: EHPolicy
 * 보내기, 수신대기 선택
 
-![New Event Hub](./images/eh-create-policy.png)
+![New Event Hub](./images/adt-lap5-03.png)
+
+![New Event Hub](./images/adt-lap5-04.png)
 
 ## ADT 라우팅 만들기 
 
@@ -51,7 +53,7 @@ Azure 포탈의 왼쪽 위 전체 메뉴에서 "리소스만들기"를 선택하
 * 엔드포인트 유형: 이벤트 허브
 * 이벤트 허브: 구독 / 네임스페이스 / 이벤트허브 (twins-evnet-hub) / 권한부여 규칙(EHPolicy)
 
-![ADT 엔드포인트 생성](./images/adt-endpoint.png)
+![ADT 엔드포인트 생성](./images/adt-lap5-05.png)
 
 ### ADT 이벤트 경로 생성
 
@@ -61,7 +63,7 @@ Azure 포탈의 왼쪽 위 전체 메뉴에서 "리소스만들기"를 선택하
 * 엔드포인트: EHEndpoint
 * 이벤트 유형: 트윈 업데이트
 
-![ADT 라우팅 생성](./images/adt-route.png)
+![ADT 라우팅 생성](./images/adt-lap5-06.png)
 
 ## [Lab 6 Azure Data Explorer로 Visualize](lab6-visualize-tsi.md)
 
