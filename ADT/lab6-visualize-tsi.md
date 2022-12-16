@@ -49,7 +49,7 @@ Azure Data Explorer를 생성하여 Azure Digital Twins에서 전송하는 데�
 
 연결 만들기가 완료되면 Azure Digital Twins 인스턴스의 Data History 페이지로 다시 이동하여 세부 정보를 확인 합니다.
 
-![ADX DataHistory정보확인](./images/adt-lap6-07.png)
+![ADX DataHistory정보확인](./images/adt-lap6-12.png)
 
 
 ## 샘플 트윈 그래프로 데이터 가시화 
@@ -74,7 +74,7 @@ Azure Data Explorer에 생성된 데이터베이스 하단의 테이블 이름�
 ```bash
 .alter table <table-name> policy ingestionbatching @'{"MaximumBatchingTimeSpan":"00:00:10", "MaximumNumberOfItems": 500, "MaximumRawDataSizeMB": 1024}'
  ```
-![ADX 쿼리실행](./images/adx_16.png)
+![ADX 쿼리실행](./images/adt-lap6-13.png)
 
  다음 쿼리를 실행하여 Azure Data Explorer에 Azure Digital Twins의 데이터가 저장되고 있는지 확인 합니다.
 
@@ -84,14 +84,14 @@ Azure Data Explorer에 생성된 데이터베이스 하단의 테이블 이름�
 | count
  ```
  
-![ADX QueryCount](./images/adx_vis_02.png)
+![ADX QueryCount](./images/adt-lap6-14.png)
   
  처음 100개 데이터 쿼리 결과 보기
  ```bash
 <table_name>
 | limit 100
  ```
-![ADX QueryLimit](./images/adx_vis_03.png)
+![ADX QueryLimit](./images/adt-lap6-15.png)
   
  Azure Digital Twins의 트윈 노드와 연결 하여 Azure Data Explorer에서 쿼리를 통해 시각화 하기
  ```bash
@@ -146,7 +146,7 @@ evaluate azure_digital_twins_query_request(ADTendpoint, ADTquery)
  ```
  
  ADX 쿼리 실행 예시
-![ADX 쿼리실행](./images/adx_17.png)
+![ADX 쿼리실행](./images/adt-lap6-16.png)
    
 
 ### 리소스 정리
